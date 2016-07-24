@@ -160,6 +160,15 @@ code {
 .sidebar-module h4 {
   margin-top: 0;
   margin-bottom: 10px;
+  text-align: center;
+}
+.sidebar-module img {
+  margin: 0 auto;
+  border: 2px solid red;
+}
+.sidebar-module p {
+  margin-top: 10px;
+  text-align: justify;
 }
 .sidebar-module-inset {
   padding: 15px;
