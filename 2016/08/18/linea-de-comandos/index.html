@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>La Terminal (Shell) | BlogDelYager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Shell, Terminal, Linea de comandos?La terminal es una aplicación que viene pre-instalada en los sistemas basados en unix que siguen el estándar POSIX y nos brinda un ambiente de entradas/salidas que “">
+<meta property="og:type" content="article">
+<meta property="og:title" content="La Terminal (Shell)">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/08/18/linea-de-comandos/index.html">
+<meta property="og:site_name" content="BlogDelYager">
+<meta property="og:description" content="Shell, Terminal, Linea de comandos?La terminal es una aplicación que viene pre-instalada en los sistemas basados en unix que siguen el estándar POSIX y nos brinda un ambiente de entradas/salidas que “">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/terminal.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/fy.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/pwd_ls.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/ls_l.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/ls_la.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/man_ls.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/files_details.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/cd.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/go_home.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/cd_...gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/mkdir-touch.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/ln_s.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/mv.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/mv_folder.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/mv_rename.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/cp_file.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/cp_folder.gif">
+<meta property="og:updated_time" content="2016-08-19T00:06:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="La Terminal (Shell)">
+<meta name="twitter:description" content="Shell, Terminal, Linea de comandos?La terminal es una aplicación que viene pre-instalada en los sistemas basados en unix que siguen el estándar POSIX y nos brinda un ambiente de entradas/salidas que “">
+<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/terminal.png">
+<meta name="twitter:creator" content="@elyager">
+  
+    <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/blog/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/blog/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/blog/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">BlogDelYager</h1>
+  
+    <p class="lead blog-description">Un poco de Javascript, CSS, C# y lo que se atraviese.</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-linea-de-comandos" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      La Terminal (Shell)
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/blog/2016/08/18/linea-de-comandos/" class="article-date"><time datetime="2016-08-18T23:54:37.000Z" itemprop="datePublished">2016-08-18</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Shell-Terminal-Linea-de-comandos"><a href="#Shell-Terminal-Linea-de-comandos" class="headerlink" title="Shell, Terminal, Linea de comandos?"></a>Shell, Terminal, Linea de comandos?</h3><p>La terminal es una aplicación que viene pre-instalada en los sistemas basados en unix que siguen el estándar <a href="https://en.wikipedia.org/wiki/POSIX" target="_blank" rel="external">POSIX</a> y nos brinda un ambiente de entradas/salidas que “contiene” o comunica al shell los comandos que escribimos en ella para que sean interpretados y nos muestre el resultado de salida en pantalla.</p>
+<p>Existen diferentes shells disponibles que podemos instalar entre los más usados están <strong>bash</strong> y <strong>zsh</strong>, yo voy a utilizar zsh. Para fines prácticos nos vamos a referir a la terminal de ahora en adelante.</p>
+<blockquote>
+<p>Nota: windows cuenta con cmd (linea de comandos) y powershell que cumplen propósitos similares pero siguen arquitecturas diferentes al shell de unix. Por eso debemos instalar un shell compatible con ayuda de <a href="https://www.cygwin.com/" target="_blank" rel="external">Cygwin</a> o en el caso de Windows 10 ya pueden activar bash como un feature del sistema.</p>
+</blockquote>
+<img src="/blog/2016/08/18/linea-de-comandos/terminal.png" alt="La Terminal" title="La Terminal">
+<a id="more"></a>
+<h3 id="Por-que-aprender-a-usar-la-terminal"><a href="#Por-que-aprender-a-usar-la-terminal" class="headerlink" title="Por qué aprender a usar la terminal?"></a>Por qué aprender a usar la terminal?</h3><p>Bueno aquí unas cuantas razones:</p>
+<ul>
+<li><p>Mucho del workflow para desarrollar aplicaciones web se basan en pequeñas herramientas que corren en la terminal, por ejemplo: gulp, webpack, node, npm, bower, stylus etc.</p>
+</li>
+<li><p>El control de versiones con git también se hace a través de la terminal, hay herramientas con GUI pero para sacarle provecho a git siempre terminaremos yendo a la terminal.</p>
+</li>
+<li><p>La conexión y el manejo de servidores Linux remotos se hace a través de la terminal usando SSH.</p>
+</li>
+<li><p>Las herramientas de seguridad informática o hacking también corren en terminal, así que si quieren ser cómo Mr. Robot (en lo técnico no necesariamente en la esquizofrenia y las drogas…) aprendan a usar la terminal.</p>
+</li>
+</ul>
+<p>Y hey si nada les convence, se pueden hacer cosas sin sentido pero divertidas como esto:</p>
+<img src="/blog/2016/08/18/linea-de-comandos/fy.gif" alt="Comandos: cp -r" title="Comandos: cp -r">
+<p>Empezamos…</p>
+<h3 id="Arbol-de-directorios"><a href="#Arbol-de-directorios" class="headerlink" title="Árbol de directorios"></a>Árbol de directorios</h3><p>El árbol de directorios es la representación estructurada de la información que contiene nuestro disco duro. Ejecuten la terminal y esto es lo primero que haremos:</p>
+<p><code>$ pwd</code> Nos da el path del working directory actual, es decir donde estamos situados en el árbol de archivos.</p>
+<p><code>$ ls</code> Lista el contenido del directorio en el que nos encontramos</p>
+<img src="/blog/2016/08/18/linea-de-comandos/pwd_ls.gif" alt="Listando el contendio de /Users/elyager" title="Listando el contendio de /Users/elyager">
+<p><strong>Nota:</strong> <code>$ clear</code> Sirve para limpiar la pantalla</p>
+<p><code>ls</code> funciona bien pero podemos sacarle más provecho agregando algo llamado <strong>banderas</strong></p>
+<p><code>$ ls -l</code> Impreme con Formato largo</p>
+<img src="/blog/2016/08/18/linea-de-comandos/ls_l.gif" alt="Información detallada de cada directorio y archivo" title="Información detallada de cada directorio y archivo">
+<p><code>$ ls -a</code> Imprime incluyendo los archivos ocultos</p>
+<p>Y por supuesto podemos mezclar banderas <code>$ ls -l -a</code> o simplemente <code>$ ls -la</code></p>
+<img src="/blog/2016/08/18/linea-de-comandos/ls_la.gif" alt="Información detallada incluyendo ocultos" title="Información detallada incluyendo ocultos">
+<p>No hay un estándar en cuanto a la forma de enviar las banderas siempre consulta el manual del comando para saber cómo utilizar sus banderas</p>
+<p><code>$ man ls</code>  Al comando man le mandamos como argumento el nombre del comando del cual queremos leer su manual. Se presiona <strong>Enter</strong> para avanzar en el documento y <strong>q</strong> para salir.</p>
+<img src="/blog/2016/08/18/linea-de-comandos/man_ls.gif" alt="Manual de comandos" title="Manual de comandos">
+<p>Normalmente la gran mayoría de comandos tienen un manual que se accede con <code>man</code> pero hay ciertos comandos de terceros que hacen uso de la bandera <code>-h</code> o en su defecto <code>--help</code> para mostrar la ayuda de como deben ser utilizados, por ejemplo: <code>nvm -h</code> o <code>git --help</code>.</p>
+<p>Ahora que ya sabemos cómo listar el directorio en detalle, veamos las columnas que nos muestra</p>
+<p>permisos | hardlinks-count | username and group | size | modified | filename/dirname</p>
+<ul>
+<li><strong>permisos</strong><br>Sobre la columna de permisos también se muestra con el primer carácter si se trata de un directorio, archivo o link.<blockquote>
+<p>d  directorio  <code>drw-r--r--</code><br>l = link <code>lrw-r--r--</code><br>- = archivo <code>-rw-r--r--</code></p>
+</blockquote>
+</li>
+</ul>
+<p>El resto tiene que ver con permisos que abordaremos en otro post.</p>
+<ul>
+<li><p><strong>hardlinks count</strong> Es un conteo de los archivos que contiene cada folder más la referencia a su directorio padre <code>..</code> y a si mismo <code>.</code>, en el caso de archivos el valor es 1 (más sobre soft y hard links en otro post).</p>
+</li>
+<li><p><strong>username and group</strong> Nombre de usuario dueño del archivo y el grupo al que pertenece.</p>
+</li>
+<li><p><strong>size</strong> Tamaño del directorio o archivo en bytes.</p>
+</li>
+<li><p><strong>modified</strong> Ultima fecha de modificación.</p>
+</li>
+<li><p><strong>filename/dirname</strong> Nombre del archivo o directorio.</p>
+</li>
+</ul>
+<img src="/blog/2016/08/18/linea-de-comandos/files_details.png" alt="directories/files/links" title="directories/files/links">
+<h3 id="Moverse-entre-directorios"><a href="#Moverse-entre-directorios" class="headerlink" title="Moverse entre directorios"></a>Moverse entre directorios</h3><p>Para avanzar un subdirectorio utilizamos el comando change directory <code>cd [subdirectorio]</code></p>
+<img src="/blog/2016/08/18/linea-de-comandos/cd.gif" alt="Comandos: cd" title="Comandos: cd">
+<p>Hay tres formas de volver al $HOME que sería el directorio raíz del usuario actualmente en el sistema.</p>
+<ul>
+<li><code>$ cd $HOME</code></li>
+<li><code>$ cd ~</code></li>
+<li><code>$ cd</code></li>
+</ul>
+<img src="/blog/2016/08/18/linea-de-comandos/go_home.gif" alt="Comandos: cd $HOME, cd ~, cd" title="Comandos: cd $HOME, cd ~, cd">
+<p>Subir un nivel, ir al directorio padre</p>
+<p>Estando en <code>/Users/elyager/Documents/GitLab/Enki</code></p>
+<p><code>$ cd ..</code> nos deja en <code>/Users/elyager/Documents/GitLab/</code></p>
+<p>Subir dos niveles? fácil</p>
+<p><code>$ cd ../..</code></p>
+<img src="/blog/2016/08/18/linea-de-comandos/cd_...gif" alt="Comandos: cd $HOME, cd .., cd ../.." title="Comandos: cd $HOME, cd .., cd ../..">
+<h3 id="Crear-Cortar-Pegar-diretorios-y-archivos"><a href="#Crear-Cortar-Pegar-diretorios-y-archivos" class="headerlink" title="Crear, Cortar, Pegar diretorios y archivos"></a>Crear, Cortar, Pegar diretorios y archivos</h3><p><code>$ touch</code> “Toca” una archivo y si no existe simplemente cambia su ultima fecha de modificación</p>
+<p><code>$ mkdir [DIRNAME]</code> Crea un directorio nuevo</p>
+<img src="/blog/2016/08/18/linea-de-comandos/mkdir-touch.gif" alt="Comandos: mkdir, touch" title="Comandos: mkdir, touch">
+<p><code>$ ln -s</code> Soft Link y Hard Links (post aparte)</p>
+<img src="/blog/2016/08/18/linea-de-comandos/ln_s.gif" alt="Comandos: ln -s" title="Comandos: ln -s">
+<p><code>$ mv</code> Mueve de un lado a otro (cortar y pegar). Sirve también para renombrar</p>
+<p>Mover un archivo a un subdirectorio y después regresarlo a la directorio actual</p>
+<img src="/blog/2016/08/18/linea-de-comandos/mv.gif" alt="Comandos: mv" title="Comandos: mv">
+<p>Mover un directorio y su contenido</p>
+<img src="/blog/2016/08/18/linea-de-comandos/mv_folder.gif" alt="Comandos: mv" title="Comandos: mv">
+<p>Recuerden <code>.</code> hacer referencia a nuestro directoria actual.</p>
+<p>Usar <code>mv</code> para renombrar</p>
+<img src="/blog/2016/08/18/linea-de-comandos/mv_rename.gif" alt="Comandos: mv para renombrar" title="Comandos: mv para renombrar">
+<p><code>$ cp</code> Copia de un lado a otro</p>
+<img src="/blog/2016/08/18/linea-de-comandos/cp_file.gif" alt="Comandos: cp" title="Comandos: cp">
+<p>Para copiar un directorio con todo su contenido hay que agregar la bandera <code>-r</code> para hacerlo de forma recursiva.</p>
+<img src="/blog/2016/08/18/linea-de-comandos/cp_folder.gif" alt="Comandos: cp -r" title="Comandos: cp -r">
+<p>Con esto abarcamos la navegación y creación de directorios, recuerden que siempre pueden profundizar en cada uno de estos comandos leyendo el manual con <code>man</code>, sé que esto puede ser tedioso pero una vez que se domina es muchisimo más rápido que utilizar el explorar de archivos gráfico del sistema se los aseguro.😉</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/" data-id="cis1023fz000wqv9kj3g02cmk" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2016/05/23/array-functions-splice/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Array Functions - Splice</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <img src="https://www.gravatar.com/avatar/a537c2ded076652a74a87985012e2a39" alt="me...">
+  <p>Soy <strong>Erik Elyager</strong> y este es mi blog personal donde hablo de temas relacionados con el desarrollo de software y la tecnlogía en general. Si te gusta el contenido no olvides compartirlo para así llegar a más personas, me puedes contactar en twitter <a href="https://twitter.com/elyager">@elyager</a>.</p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/blog/2016/08/18/linea-de-comandos/">La Terminal (Shell)</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/05/23/array-functions-splice/">Array Functions - Splice</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/05/06/array-functions-slice/">Array Functions - Slice</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Erik Ochoa<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+</body>
+</html>
