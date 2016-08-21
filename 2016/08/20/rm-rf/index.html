@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Array Functions - Slice | BlogDelYager</title>
+  <title>Reemplaza el temido comando rm con trash | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="La función array.slice() como su nombre lo dice sirve para tomar una parte, rebanada o pedazo de un arreglo y recibe como parametros la posición inicial y la posición final de la parte que queremos to">
+  <meta name="description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Array Functions - Slice">
-<meta property="og:url" content="http://elyager.github.io/blog/2016/05/06/array-functions-slice/index.html">
+<meta property="og:title" content="Reemplaza el temido comando rm con trash">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/08/20/rm-rf/index.html">
 <meta property="og:site_name" content="BlogDelYager">
-<meta property="og:description" content="La función array.slice() como su nombre lo dice sirve para tomar una parte, rebanada o pedazo de un arreglo y recibe como parametros la posición inicial y la posición final de la parte que queremos to">
-<meta property="og:updated_time" content="2016-08-19T00:03:17.000Z">
+<meta property="og:description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
+<meta property="og:updated_time" content="2016-08-21T02:14:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Array Functions - Slice">
-<meta name="twitter:description" content="La función array.slice() como su nombre lo dice sirve para tomar una parte, rebanada o pedazo de un arreglo y recibe como parametros la posición inicial y la posición final de la parte que queremos to">
+<meta name="twitter:title" content="Reemplaza el temido comando rm con trash">
+<meta name="twitter:description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -80,13 +80,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-array-functions-slice" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="draf-rm-rf" class="article article-type-draf" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Array Functions - Slice
+      Reemplaza el temido comando rm con trash
     </h1>
   
 
@@ -95,7 +95,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2016/05/06/array-functions-slice/" class="article-date"><time datetime="2016-05-06T19:23:12.000Z" itemprop="datePublished">2016-05-06</time></a>
+  <a href="/blog/2016/08/20/rm-rf/" class="article-date"><time datetime="2016-08-21T00:03:27.000Z" itemprop="datePublished">2016-08-20</time></a>
 </div>
 
     
@@ -106,12 +106,24 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>La función array.slice() como su nombre lo dice sirve para tomar una parte, rebanada o pedazo de un arreglo y recibe como parametros la posición inicial y la posición final de la parte que queremos tomar, aunque también podemos enviarle un<br>número negativo como vemos en el siguiente ejemplo:</p>
+        <h3 id="Reemplaza-el-temido-comando-rm-con-trash"><a href="#Reemplaza-el-temido-comando-rm-con-trash" class="headerlink" title="Reemplaza el temido comando  rm con trash"></a>Reemplaza el temido comando  rm con trash</h3><p>Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando <code>rm</code> no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás seguro de borrar el archivo cuando eres usuario root. Razón número uno por la que no recomiendo user la terminal con usuario root todo el tiempo a menos que realmente necesites los permisos de root, vamos, ingresar la contraseña una que otra vez no te va a matar o si? veamos los comandos:</p>
 <a id="more"></a>
-<p></p><p data-height="550" data-theme-id="dark" data-slug-hash="eZxmxd" data-default-tab="js,result" data-user="Elyager" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Elyager/pen/eZxmxd/" target="_blank" rel="external">Array.slice()</a> by Erik Ochoa (<a href="http://codepen.io/Elyager" target="_blank" rel="external">@Elyager</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>recueden que slice no afecta el arreglo existente si no que regresa uno nuevo. Espero y les sirva 😃</p>
+<p><code>$ rm miArchivo.txt</code> Borra el archivo</p>
+<p><code>$ rm -r miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios</p>
+<p><code>$ rm -rf miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios, forzandolo incluso si no se tienen los permisos.</p>
+<p>Imaginemos que en el último comando donde lo hacernos de forma <strong>recursiva</strong> y <strong>forzada</strong> en lugar de borrar <code>miFolder</code> borramos <code>/</code> en ese caso estaríamos borrando el sistema por completo.</p>
+<p><code>$ rm -rf /</code> <strong>🚫🚫🚫NUNCA ESCRIBAS ESTO🚫🚫🚫</strong></p>
+<p>Si este comando es tan peligroso y nosotros como humanos somos propensos a cometer errores, ¿qué podemos hacer?</p>
+<p>Algunos recomiendan dar un alias al comando <code>rm</code> por <code>rm -i</code> para que siempre nos pregunte cuando queramos borrar, esto es una buena opción pero igual podríamos darle que si a todo y borrar algo importante.</p>
+<p>Por eso yo recomiendo la opción de utilizar otro comando para “borrar”, ese comando es <a href="http://hasseg.org/trash/" target="_blank" rel="external">Trash</a>, un script que se puede instalar con homebrew así:</p>
+<p><code>$ brew install trash</code></p>
+<p>En realidad no es un comando para borrar si no para mandar a la papelera de reciclaje, haciéndolo a través del Finder para que así podamos usar la opción de <strong>Put Back</strong> en caso que queramos un archivo de vuelta justo donde estaba.</p>
+<p><code>$ trash miArchivo.txt</code> Bora el archivo</p>
+<p><code>$ trash miFolder</code> No es necesario especificar ninguna bandera para borrar un directorio</p>
+<p><code>$ trash -l</code> Lista el contenido de la papelera</p>
+<p><code>$ trash -e</code> Borra la papelera (pregunta por confirmación)</p>
+<p>Así tenemos dos comandos totalmente diferentes, uno para eliminar y otro para mandar a la papelera, usen este último y se van a ahorrar muchos problemas.</p>
+<p>En serio <code>rm</code> está prohibido. ☠️</p>
 
       
     </div>
@@ -122,13 +134,11 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/05/06/array-functions-slice/" data-id="cis3zfzyq000w6g9kx8njh951" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/rm-rf/" data-id="cis3zfzyl000u6g9k5tkrnn8p" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Arrays/">Arrays</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Functions/">Functions</a></li></ul>
-
 
     </footer>
   </div>
@@ -136,13 +146,13 @@
     
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
-  
   <li role="presentation">
-    <a href="/blog/2016/05/23/array-functions-splice/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Array Functions - Splice</span>
-      <i class="fa fa-chevron-right pull-right"></i>
+    <a href="/blog/2016/08/20/symlinks/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Links Simbólicos (shortcuts)</span>
     </a>
   </li>
+  
   
 </ul>
 
