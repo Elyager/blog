@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Reemplaza el temido comando rm con trash | BlogDelYager</title>
+  <title>Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot; | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
+  <meta name="description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reemplaza el temido comando rm con trash">
+<meta property="og:title" content="Reemplaza el temido comando  "rm" por "trash"">
 <meta property="og:url" content="http://elyager.github.io/blog/2016/08/20/rm-rf/index.html">
 <meta property="og:site_name" content="BlogDelYager">
-<meta property="og:description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
-<meta property="og:updated_time" content="2016-08-21T02:14:31.000Z">
+<meta property="og:description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
+<meta property="og:updated_time" content="2016-08-23T08:12:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reemplaza el temido comando rm con trash">
-<meta name="twitter:description" content="Reemplaza el temido comando  rm con trashBorrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda co">
+<meta name="twitter:title" content="Reemplaza el temido comando  "rm" por "trash"">
+<meta name="twitter:description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -86,7 +86,7 @@
     
   
     <h1 class="article-title" itemprop="name">
-      Reemplaza el temido comando rm con trash
+      Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;
     </h1>
   
 
@@ -106,24 +106,24 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Reemplaza-el-temido-comando-rm-con-trash"><a href="#Reemplaza-el-temido-comando-rm-con-trash" class="headerlink" title="Reemplaza el temido comando  rm con trash"></a>Reemplaza el temido comando  rm con trash</h3><p>Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando <code>rm</code> no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás seguro de borrar el archivo cuando eres usuario root. Razón número uno por la que no recomiendo user la terminal con usuario root todo el tiempo a menos que realmente necesites los permisos de root, vamos, ingresar la contraseña una que otra vez no te va a matar o si? veamos los comandos:</p>
+        <p>Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando <code>rm</code> no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás seguro de borrar. Razón número uno por la que no recomiendo usar la terminal con usuario root todo el tiempo a menos que realmente necesites los permisos de root, vamos, ingresar la contraseña una que otra vez no te va a matar o si? veamos el comando rm entonces:</p>
 <a id="more"></a>
 <p><code>$ rm miArchivo.txt</code> Borra el archivo</p>
 <p><code>$ rm -r miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios</p>
-<p><code>$ rm -rf miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios, forzandolo incluso si no se tienen los permisos.</p>
+<p><code>$ rm -rf miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios, forzándolo incluso si no se tienen los permisos.</p>
 <p>Imaginemos que en el último comando donde lo hacernos de forma <strong>recursiva</strong> y <strong>forzada</strong> en lugar de borrar <code>miFolder</code> borramos <code>/</code> en ese caso estaríamos borrando el sistema por completo.</p>
-<p><code>$ rm -rf /</code> <strong>🚫🚫🚫NUNCA ESCRIBAS ESTO🚫🚫🚫</strong></p>
+<p><strong>🚫🚫🚫NUNCA ESCRIBAS ESTO🚫🚫🚫</strong><br><code>$ rm -rf /</code> borrar de forma recursiva y forzada desde el directorio raíz en adelante, es decir todo el sistema</p>
 <p>Si este comando es tan peligroso y nosotros como humanos somos propensos a cometer errores, ¿qué podemos hacer?</p>
-<p>Algunos recomiendan dar un alias al comando <code>rm</code> por <code>rm -i</code> para que siempre nos pregunte cuando queramos borrar, esto es una buena opción pero igual podríamos darle que si a todo y borrar algo importante.</p>
-<p>Por eso yo recomiendo la opción de utilizar otro comando para “borrar”, ese comando es <a href="http://hasseg.org/trash/" target="_blank" rel="external">Trash</a>, un script que se puede instalar con homebrew así:</p>
+<p>Hay personas que recomiendan dar un alias al comando <code>rm</code> por <code>rm -i</code> para que siempre nos pregunte cuando queramos borrar, esto es una buena opción pero igual podríamos darle que si a todo y borrar algo importante.</p>
+<p>Por eso me voy más por la opción de utilizar otro comando para “borrar”, ese comando es <a href="http://hasseg.org/trash/" target="_blank" rel="external">Trash</a>. Trash es un script que se puede instalar con homebrew así:</p>
 <p><code>$ brew install trash</code></p>
-<p>En realidad no es un comando para borrar si no para mandar a la papelera de reciclaje, haciéndolo a través del Finder para que así podamos usar la opción de <strong>Put Back</strong> en caso que queramos un archivo de vuelta justo donde estaba.</p>
+<p>En realidad no es un comando para borrar si no para mandar a la papelera de reciclaje. Esto lo hace a través del Finder (incluso se escucha el sonido de cuando enviamos a la papelera) para que así podamos usar la opción de <strong>Put Back</strong> en caso que queramos un archivo de vuelta justo donde estaba.</p>
 <p><code>$ trash miArchivo.txt</code> Bora el archivo</p>
 <p><code>$ trash miFolder</code> No es necesario especificar ninguna bandera para borrar un directorio</p>
 <p><code>$ trash -l</code> Lista el contenido de la papelera</p>
 <p><code>$ trash -e</code> Borra la papelera (pregunta por confirmación)</p>
-<p>Así tenemos dos comandos totalmente diferentes, uno para eliminar y otro para mandar a la papelera, usen este último y se van a ahorrar muchos problemas.</p>
-<p>En serio <code>rm</code> está prohibido. ☠️</p>
+<p>Así tenemos dos comandos totalmente diferentes, uno para eliminar y otro para mandar a la papelera.</p>
+<p>Usen este último y se van a ahorrar muchos problemas, en serio <code>rm</code> está prohibido. ☠️</p>
 
       
     </div>
@@ -134,7 +134,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/rm-rf/" data-id="cis5liy8v000wv49kg20z9fza" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/rm-rf/" data-id="cis773ix0000u169kwtpztx4r" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -206,7 +206,7 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando rm con trash</a>
+          <a href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</a>
         </li>
       
         <li>
