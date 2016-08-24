@@ -347,6 +347,11 @@
   text-shadow: 0 1px #be3221;
 }
 
+pre {
+    font-size: 16px;
+    font-family: monospace;
+}
+
 /** Highlight.js Styles (Syntax Highlighting) */
 
 .highlight {
