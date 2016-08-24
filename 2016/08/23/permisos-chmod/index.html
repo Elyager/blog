@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Permisos, el uso de chown y chmod | BlogDelYager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Quién no se ha topado con un problema de permisos? “usted no tiene permisos para ejecutar X o Y tarea.” Es un error común, por eso esté post les muestro el uso del chmod y chown para jamas volver a te">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Permisos, el uso de chown y chmod">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/08/23/permisos-chmod/index.html">
+<meta property="og:site_name" content="BlogDelYager">
+<meta property="og:description" content="Quién no se ha topado con un problema de permisos? “usted no tiene permisos para ejecutar X o Y tarea.” Es un error común, por eso esté post les muestro el uso del chmod y chown para jamas volver a te">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/ls-users.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/show-group.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/ls-l.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/permisos.png">
+<meta property="og:updated_time" content="2016-08-24T02:02:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Permisos, el uso de chown y chmod">
+<meta name="twitter:description" content="Quién no se ha topado con un problema de permisos? “usted no tiene permisos para ejecutar X o Y tarea.” Es un error común, por eso esté post les muestro el uso del chmod y chown para jamas volver a te">
+<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/ls-users.png">
+<meta name="twitter:creator" content="@elyager">
+  
+    <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/blog/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/blog/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/blog/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">BlogDelYager</h1>
+  
+    <p class="lead blog-description">Un poco de Javascript, CSS, C# y lo que se atraviese.</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-permisos-chmod" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Permisos, el uso de chown y chmod
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/blog/2016/08/23/permisos-chmod/" class="article-date"><time datetime="2016-08-24T02:02:35.000Z" itemprop="datePublished">2016-08-23</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Quién no se ha topado con un problema de permisos? <em><strong>“usted no tiene permisos para ejecutar X o Y tarea.”</strong></em> Es un error común, por eso esté post les muestro el uso del <strong>chmod</strong> y <strong>chown</strong> para jamas volver a tener este problema. 😎</p>
+<a id="more"></a>
+<p>Primero debemos comprender que todos los archivos y directorios de nuestro computador pertenecen a un usuario y a un grupo. Veamos cómo listar los usuarios y grupos existentes:</p>
+<p><code>ls /Users</code> Listar usuarios</p>
+<img src="/blog/2016/08/23/permisos-chmod/ls-users.png" alt="lista de usuarios" title="lista de usuarios">
+<p><code>dscacheutil -q group</code> Mostrar todos los grupos<br><code>dscacheutil -q group -a name staff</code> Mostrar información del grupo <strong>staff</strong><br><code>dscacheutil -q group -a name admin</code> Mostrar información del grupo <strong>admin</strong></p>
+<img src="/blog/2016/08/23/permisos-chmod/show-group.png" alt="Grupos" title="Grupos">
+<p><code>ls -l</code> En la segunda columna del resultado de este comando se muestra el usuario y el grupo.</p>
+<img src="/blog/2016/08/23/permisos-chmod/ls-l.png" alt="Permisos" title="Permisos">
+<h3 id="El-chown"><a href="#El-chown" class="headerlink" title="El chown"></a>El chown</h3><p>Ya sabemos como identificar a qué usuario le pertenece un archivo (el owner) y también a que grupo pero, cómo cambiamos el owner y el grupo? simple, con <strong>chown</strong> pasando el usuario y el grupo separado por dos puntos <code>chown  [user:group] [archivo]</code>.</p>
+<p><code>chown elyager:admin miArchivo.txt</code> Cambia el owner a <strong>elyager</strong> y el grupo por <strong>admin</strong><br><code>chown elyager miArchivo.txt</code> Cambia el owner a <strong>elyager</strong> y deja el grupo sin alteración<br><code>chown :admin miArchivo.txt</code> Cambia el grupo por <strong>admin</strong></p>
+<p>Y para directorios? Exactamente igual, sólo que si queremos afecte a todo el contenido del directorio hay que hacerlo recursivo.</p>
+<p><code>chown -R :admin content</code> Cambia el grupo por <strong>admin</strong> para el directorio <strong>content</strong> y a todo su contenido<br><code>chown -R elyager content</code> Cambia el owner de el directorio <strong>content</strong> y todo su contenido a <strong>elyager</strong> y deja el grupo sin alteración</p>
+<p>Ya sabemos cómo asignar usuarios y grupos ahora veamos cómo modificar los permisos.</p>
+<h3 id="El-chmod"><a href="#El-chmod" class="headerlink" title="El chmod"></a>El chmod</h3><p><code>chmod</code> es un comando que nos permite modificar los permisos de archivos y directorios. Los permisos que tenemos disponibles son:</p>
+<ul>
+<li>r = lectura</li>
+<li>w = escritura</li>
+<li>x = ejecución</li>
+</ul>
+<p>Primer aprendamos a interpretarlos:</p>
+<img src="/blog/2016/08/23/permisos-chmod/permisos.png" alt="Permisos" title="Permisos">
+<p>El primer carácter no tiene que ver con los permisos y representa el “tipo de nodo”, puede ser:</p>
+<ul>
+<li><code>d</code> Directorio</li>
+<li><code>-</code> Archivo</li>
+<li><code>l</code> Symlink (<a href="https://elyager.github.io/blog/2016/08/20/symlinks/">Post</a> al respecto)</li>
+</ul>
+<p>Los siguientes 9 caracteres se dividen de tres en tres todos siguiendo el orden <code>r - read</code>, <code>w - write</code>, <code>x - execute</code>. Si no tiene alguno de estos permisos muestra <code>-</code> en lugar de la letra correspondiente.</p>
+<p>El primer conjunto de tres caracteres es para los permisos del owner, le sigue los permisos del grupo y de ahí los permisos de los otros.</p>
+<ul>
+<li>owner: Dueño del archivo o directorio</li>
+<li>grupo: Grupo al que pertenece el archivo</li>
+<li>otros: Todos los demás usuarios que no son el dueño ni del grupo</li>
+</ul>
+<p>Podemos modificar individualmente los permisos de cada uno, veamos algunos ejemplos:</p>
+<p><code>drwxrwxrwx</code> es un directorio con los siguientes permisos:</p>
+<ul>
+<li>onwer: <code>rwx</code> lectura, escritura, ejecución.</li>
+<li>grupo: <code>rwx</code> lectura, escritura, ejecución.</li>
+<li>otros: <code>rwx</code> lectura, escritura, ejecución.</li>
+</ul>
+<p><code>-rw-r--r--</code> es un archivo con los siguientes permisos:</p>
+<ul>
+<li>onwer: <code>rw-</code> lectura, escritura.</li>
+<li>grupo: <code>r--</code> lectura.</li>
+<li>otros: <code>r--</code> lectura.</li>
+</ul>
+<p><code>-r-x--x--x</code> es un archivo con los siguientes permisos:</p>
+<ul>
+<li>onwer: <code>r-x</code> lectura, ejecución.</li>
+<li>grupo: <code>--x</code> ejecución.</li>
+<li>otros: <code>--x</code> ejecución.</li>
+</ul>
+<p><strong>Nota:</strong> un directorio necesita tener el permiso de ejecución para poder entrar a su contenido.</p>
+<p>Podría seguir con una infinidad de ejemplos pero creo que con estos se entiende cómo leer los permisos. Ahora viene lo bueno, usar el comando <code>chmod</code> para agregar, quitar y asignar permisos.</p>
+<p><code>+</code> – añade un permiso<br><code>–</code> – elimina un permiso<br><code>=</code> – específica un permiso (sobrescribiendo los permisos anteriores)</p>
+<p><code>u</code> – owner<br><code>g</code> – grupo<br><code>o</code> – otros<br><code>a</code> – todos (incluye al owner, al grupo y a otros)</p>
+<p>Ejemplos:</p>
+<p><code>chmod u+w+r miArchivo.txt</code> Agrega lectura y escritura al owner<br><code>chmod u+w-r,g+w miArchivo.txt</code> Agrega lectura y escritura al owner. Quita escritura al grupo<br><code>chmod a+wrx miArchivo.txt</code> Agrega lectura, escritura y ejecución para todos<br><code>chmod a=x miArchivo.txt</code> Agrega ejecución para todos</p>
+<p>Hay que tener mucho cuidado al cambiar los permisos, podríamos estropear todo el sistema si cambiamos los permisos al archivo equivocado.</p>
+<p>Por último hay un representación octal de estos permisos:</p>
+<p><code>r</code> = 4<br><code>w</code> = 2<br><code>x</code> = 1<br><code>\-</code> = 0</p>
+<p>Para agregar estos permisos debemos hacer una suma de lo que queramos por ejemplo queremos lectura y escritura? seria 6, ejecución y escritura? 3 etc. Veamos unos ejemplos</p>
+<p><code>chmod a=rw miArchivo.txt</code><br><code>chmod 666 miArchivo.txt</code></p>
+<p><code>chmod u=rwx,g=rx,o=r miArchivo.txt</code><br><code>chmod 754 miArchivo.txt</code></p>
+<p><code>chmod a=x miArchivo.txt</code><br><code>chmod 111 miArchivo.txt</code></p>
+<p>Ambas opciones son validas sólo recuerden que el modo octal <strong>no</strong> sirve para agregar y quitar permisos a los ya existentes, sino que sobrescribe con los nuevos valores.</p>
+<p>Con esto difícilmente volverán a tener un problema de permisos que no puedan solucionar.👊</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://elyager.github.io/blog/blog/2016/08/23/permisos-chmod/" data-id="cis899z26000xy29k07l2myqx" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2016/08/20/rm-rf/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module">
+  <div class="github-widget" data-username="elyager"></div> <script src="https://npmcdn.com/github-card@1.2.1/dist/widget.js"></script> <p>You can find me also at twitter <a href="http:www.twitter.com/elyager" >@elyager</a></p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a> <a href="/blog/tags/Shell-Terminal-Bash-ZSH/" style="font-size: 10px;">Shell Terminal Bash ZSH</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/blog/2016/08/23/permisos-chmod/">Permisos, el uso de chown y chmod</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/20/symlinks/">Links Simbólicos (shortcuts)</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/18/linea-de-comandos/">La Terminal (Shell)</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/05/23/array-functions-splice/">Array Functions - Splice</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Erik Ochoa<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+</body>
+</html>
