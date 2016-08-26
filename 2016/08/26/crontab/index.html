@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Crontab, cómo programar tareas | BlogDelYager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="El comando crontab nos permite programar tareas para que corran a cierto tiempo. Primero listemos las tareas actualmente programadas en crontrab
+$ crontab -l
+
+Lo sé, nuestra primer reacción bien podrí">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Crontab, cómo programar tareas">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/08/26/crontab/index.html">
+<meta property="og:site_name" content="BlogDelYager">
+<meta property="og:description" content="El comando crontab nos permite programar tareas para que corran a cierto tiempo. Primero listemos las tareas actualmente programadas en crontrab
+$ crontab -l
+
+Lo sé, nuestra primer reacción bien podrí">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/26/crontab/crontab-l.png">
+<meta property="og:image" content="http://i.imgur.com/q3iCWqE.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/26/crontab/crontab-l.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/26/crontab/mail-inbox.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/26/crontab/mail-new.png">
+<meta property="og:updated_time" content="2016-08-26T19:28:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Crontab, cómo programar tareas">
+<meta name="twitter:description" content="El comando crontab nos permite programar tareas para que corran a cierto tiempo. Primero listemos las tareas actualmente programadas en crontrab
+$ crontab -l
+
+Lo sé, nuestra primer reacción bien podrí">
+<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/08/26/crontab/crontab-l.png">
+<meta name="twitter:creator" content="@elyager">
+  
+    <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/blog/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/blog/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/blog/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">BlogDelYager</h1>
+  
+    <p class="lead blog-description">Un poco de Javascript, CSS, C# y lo que se atraviese.</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-crontab" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Crontab, cómo programar tareas
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/blog/2016/08/26/crontab/" class="article-date"><time datetime="2016-08-26T19:28:44.000Z" itemprop="datePublished">2016-08-26</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>El comando <strong>crontab</strong> nos permite programar tareas para que corran a cierto tiempo. Primero listemos las tareas actualmente programadas en crontrab</p>
+<p><code>$ crontab -l</code></p>
+<img src="/blog/2016/08/26/crontab/crontab-l.png" alt="crontab -l" title="crontab -l">
+<p>Lo sé, nuestra primer reacción bien podría ser</p>
+<p><img src="http://i.imgur.com/q3iCWqE.gif" alt="WTF"></p>
+<p>Veamos que está pasando aquí…</p>
+<a id="more"></a>
+<p>Vamos a visualizarlo como una tabla, cada fila siendo una tarea por lo tanto tenemos dos tareas. Ahora definamos las columnas:</p>
+<pre>
+*    *    *    *    *    **Command/Script to execute**
+|    |    |    |    |
+|    |    |    |    ---  Días de la semana (0-6)(Dom = 0)
+|    |    |    --------  Mes (1-12)
+|    |    -------------  Día del mes (1-31)
+|    ------------------  Hora (0-23)  
+-----------------------  Minutos (0-59)
+</pre>
+
+<p>Entonces analizando las dos tareas las podía enunciar de la siguiente forma:</p>
+<img src="/blog/2016/08/26/crontab/crontab-l.png" alt="crontab -l" title="crontab -l">
+<p>Nota: Vamos de derecha a izquierda leyendo cada columna.</p>
+<p><strong>Tarea 1:</strong></p>
+<p>Corre el script <code>createTodayFile.sh</code> que se encuentra en el directorio <code>$HOME/cronjobs/</code> todos los días de la semana (el * significa todos), todos los meses, todos los días del mes, a las 9 horas con 5 minutos.</p>
+<p><strong>En pocas palabras:</strong> corre la tarea todos los días a las 9:05 AM.</p>
+<p><strong>Tarea 2:</strong></p>
+<p>Corre el script <code>pushToGitHub.sh</code> que se encuentra en el directorio <code>$HOME/cronjobs/</code> todos los días de la semana, todos los meses, todos los días del mes, todas las horas, en el minuto 0.</p>
+<p><strong>En pocas palabras:</strong> corre la tarea cada hora en punto.</p>
+<p>Podemos también programar comandos en lugar de scripts:</p>
+<p>Imprimir el archivo hosts a cada minuto todas las horas, todos los días, todos los meses.<br><code>*    *    *    *    * cat /etc/hosts</code></p>
+<p>Imprimir el mensaje “FUUUUUU” cada minuto de las díez de la mañana, todos los días, todos los meses.<br><code>*    10    *    *    * echo &quot;FUUUUUU&quot;</code></p>
+<p>Podemos incluso definir tiempos complejos como:</p>
+<ul>
+<li>1-10 - Intervalo</li>
+<li>*/5 - Cada 5 (días, minutos, horas etc.)</li>
+<li>1,2,3,5 - En especifico (por ejemplo el minuto 1,2,3,5)</li>
+</ul>
+<p>Cómo pueden ver las 5 columnas que pertenecen al tiempo de ejecución de la tarea son muy versátiles y permiten hacer combinación muy complejas, tengan cuidado y siempre prueben que el tiempo programado es el correcto con algo sencillo y para nada peligroso como un <code>echo &quot;funciona!&quot;</code>.</p>
+<blockquote>
+<p><strong>Nota:</strong> Tomen en cuenta que entre cada asterisco hay exactamente <em>cuatro</em> espacios,<br>si no programan sus tareas así, no van a funcionar. Entre el último asterisco y el script/comando a ejecutar no importan los espacios.</p>
+</blockquote>
+<p>Ya sabemos leer las tareas programadas mediante crontab, ahora hay que ver cómo agregamos y editamos nuestras tareas:</p>
+<p><code>$ crontab -e</code></p>
+<p>Esto va abrir el editor que tengan definido en la variable de ambiente $EDITOR, por lo general es el editor de consola “VIM”.</p>
+<p>Si no han trabajado con vim antes, voy a explicar brevemente los comandos que necesitamos para agregar una tarea</p>
+<p><strong>Pasos:</strong></p>
+<ol>
+<li><code>$ crontab -e</code> Esto nos abre el editor.</li>
+<li>Presiona la tecla <code>i</code> Esto nos permitira editar, podemos mover el cursor normalmente con las flechas.</li>
+<li>Agregamos o modificamos nuestra tarea. Al terminar de hacer la edición presionamos <code>esc</code> para salir del modo de inserción.</li>
+<li>Escribimos <code>:wq</code> para guardar y salir del editor.</li>
+</ol>
+<p>Con esto ya tenemos nuestra nueva tarea agregada 👊</p>
+<p>Regresando un poco, decíamos que <code>echo</code> imprime, <code>cat</code> imprime, incluso los scripts como <code>pushToGitHub</code> también imprime. A dónde va a “imprimir”?, bueno a una bandeja de entrada, un tipo mail que de hecho podemos consultar con el comando <code>$ mail</code>.</p>
+<img src="/blog/2016/08/26/crontab/mail-inbox.png" alt="Mail Inbox" title="Mail Inbox">
+<p>Para leer los mails simplemente nos vamos presionando <strong>enter</strong> hasta que se acaben y <code>q</code> <strong>enter</strong> para salir. Una vez que el mail es leído se va a un archivo llamado <code>mbox</code> en nuestro directorio <code>$HOME</code></p>
+<p><code>cat ~/mbox</code> Para ver los mails archivados.</p>
+<p><strong>Extra tips:</strong><br>Para saber cual es su editor de consola por default escriban esto <code>$ echo $EDITOR</code>. Para cambiarlo pueden escribir <code>export EDITOR [EDITORCOMMANDNAME]</code> por ejemplo:</p>
+<p>Cambiar por nano<br><code>$ export EDITOR = nano</code></p>
+<p>Esto será sólo temporal mientras dure la sesión de terminal para hacer el cambio permanente hay que agregar el export (<code>export EDITOR = nano</code>) al archivo de configuración del shell que estés usando.</p>
+<ul>
+<li>Ruta bash(default en mac): <code>$HOME/.bash_profile</code></li>
+<li>Ruta zsh: <code>$HOME/.zshrc</code></li>
+</ul>
+<p>En cuanto al mail, si te resulta molesto hay un truco para deshabilitarlo.</p>
+<img src="/blog/2016/08/26/crontab/mail-new.png" alt="New Mail" title="New Mail">
+<p>Simplemente agrega la <code>&gt; /dev/null</code> al final de tu tarea para enviar todo el output al “limbo” y así no se genera ningún mensaje.</p>
+<p><code>0 1 5 10 * /path/to/script.sh &gt; /dev/null</code></p>
+<p>Si realmente quieres que ni siquiera los errores sean enviados agrega  <code>&gt; /dev/null 2&gt;&amp;1</code></p>
+<p>Eso es todo, con esto ya puedes dominar las tareas automatizadas. 🎉🎉🎉</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://elyager.github.io/blog/blog/2016/08/26/crontab/" data-id="cisc5ko8y000uq69kfkha4k1b" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/shell-tasks/">shell tasks</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2016/08/24/klipse/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Klipse Javascript Live Coding</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module">
+  <div class="github-widget" data-username="elyager"></div> <script src="https://npmcdn.com/github-card@1.2.1/dist/widget.js"></script> <p>You can find me also at twitter <a href="http:www.twitter.com/elyager" >@elyager</a></p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/shell-tasks/">shell tasks</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a> <a href="/blog/tags/Shell-Terminal-Bash-ZSH/" style="font-size: 10px;">Shell Terminal Bash ZSH</a> <a href="/blog/tags/shell-tasks/" style="font-size: 10px;">shell tasks</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/blog/2016/08/26/crontab/">Crontab, cómo programar tareas</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/24/klipse/">Klipse Javascript Live Coding</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/23/permisos-chmod/">Permisos, el uso de chown y chmod</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/20/symlinks/">Links Simbólicos (shortcuts)</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Erik Ochoa<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+  <!-- Klipse for JS evaluation live coding  -->
+  <link rel="stylesheet" href="http://app.klipse.tech/css/codemirror.css">
+  <link rel="stylesheet" href="/blog/css/material-theme.css">
+
+  <script>
+      window.klipse_settings = {
+          selector_eval_js: '.language-klipse-eval-js',
+          codemirror_options_in: {
+            lineNumbers: true,
+            autoCloseBrackets: true
+          }
+      };
+  </script>
+  <script src="http://app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+</body>
+</html>
