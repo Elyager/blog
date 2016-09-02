@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Búsquedas usando find | BlogDelYager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Navegar entre archivos es complicado, buscar un archivo en especifico aún más. Para ayudarnos con esta tediosa tarea existe el comando find. Dicho comando nos sirve para buscar archivos en el sistema">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Búsquedas usando find">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/09/01/busquedas-usando-find/index.html">
+<meta property="og:site_name" content="BlogDelYager">
+<meta property="og:description" content="Navegar entre archivos es complicado, buscar un archivo en especifico aún más. Para ayudarnos con esta tediosa tarea existe el comando find. Dicho comando nos sirve para buscar archivos en el sistema">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/09/01/busquedas-usando-find/find.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/09/01/busquedas-usando-find/maxdepth.png">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/09/01/busquedas-usando-find/md5.png">
+<meta property="og:updated_time" content="2016-09-02T06:48:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Búsquedas usando find">
+<meta name="twitter:description" content="Navegar entre archivos es complicado, buscar un archivo en especifico aún más. Para ayudarnos con esta tediosa tarea existe el comando find. Dicho comando nos sirve para buscar archivos en el sistema">
+<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/09/01/busquedas-usando-find/find.png">
+<meta name="twitter:creator" content="@elyager">
+  
+    <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/blog/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/blog/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/blog/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">BlogDelYager</h1>
+  
+    <p class="lead blog-description">Un poco de Javascript, CSS, C# y lo que se atraviese.</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-busquedas-usando-find" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Búsquedas usando find
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/blog/2016/09/01/busquedas-usando-find/" class="article-date"><time datetime="2016-09-02T06:48:03.000Z" itemprop="datePublished">2016-09-01</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Navegar entre archivos es complicado, buscar un archivo en especifico aún más. Para ayudarnos con esta tediosa tarea existe el comando <strong>find</strong>. Dicho comando nos sirve para buscar archivos en el sistema de forma muy rápida y dando un resultados que podemos personalizar e incluso efectuarle tareas muy especificas. Veamos algunos ejemplos.</p>
+<a id="more"></a>
+<p>Buscar archivos con el nombre “gulpfile” en el directorio actual.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ find . -name <span class="string">'gulpfile.js'</span></div><div class="line"></div><div class="line"><span class="comment"># usar -iname para que sea insensitive case</span></div><div class="line">$ find . -iname <span class="string">'gulpfile.js'</span></div></pre></td></tr></table></figure>
+<img src="/blog/2016/09/01/busquedas-usando-find/find.png" alt="find" title="find">
+<p>Hay que tener especial cuidado con el comando find ya que puede <strong>consumir todo el poder de procesamiento de nuestra máquina</strong>. Esto nos dejaría en la penosa necesidad de reiniciar… qué? olvidaron guardar algo? I´m so sorry my friend.</p>
+<p>Para evitar quedarnos sin recursos en el computador podemos pasarle ciertos parámetros a nuestra búsqueda para hacerla más especifica.</p>
+<p>Especificar nivel de subdirectorios a los cuales buscar.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Lista los archivos con el nombre gulp</span></div><div class="line">$ find . -name <span class="string">'gulpfile.js'</span> -maxdepth 1 <span class="comment">#solo en el directorio actual</span></div><div class="line">$ find . -name <span class="string">'gulpfile.js'</span> -maxdepth 2 <span class="comment">#directorio actual y sus subdirectorios</span></div></pre></td></tr></table></figure>
+<img src="/blog/2016/09/01/busquedas-usando-find/maxdepth.png" alt="maxdepth" title="maxdepth">
+<p>Se pude buscar por tipo.</p>
+<ul>
+<li>f: archivo</li>
+<li>d: directorio</li>
+<li>l: link simbolico</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ find . -type d <span class="comment">#solo directorios</span></div><div class="line">$ find . -type f <span class="comment">#solo archivos</span></div></pre></td></tr></table></figure>
+<p>Buscar por extensión de archivo.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ find . -type f -name <span class="string">'*.conf'</span></div></pre></td></tr></table></figure>
+<p>También podemos buscar por tamaño.</p>
+<ul>
+<li>c: bytes</li>
+<li>k: Kilobytes</li>
+<li>M: Megabytes</li>
+<li>G: Gigabytes</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ find . -size 50c <span class="comment">#Exact size</span></div><div class="line">$ find . -size -50c <span class="comment">#Equal or Less than x</span></div><div class="line">$ find . -size +50c <span class="comment">#Equal or More than x</span></div></pre></td></tr></table></figure>
+<p>Y claro podemos combinar todo esto.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Busca todos los archivos en el directorio home y dos subniveles con la exención mp4 que sobrepasen los 50 Megabytes en tamaño</span></div><div class="line">$ find ~ -size +50M -type f -maxdepth 2 -iname <span class="string">'*.mp4'</span></div></pre></td></tr></table></figure>
+<p>Nice, right? Así de especificos podemos ser en nuestras busquedas y aún más. Les invito a ver el manual de find <code>man find</code>.</p>
+<p>Como <strong>extra tip</strong>:<br>La bandera <code>-exec</code> nos sirve para ejecutar un comando sobre cada uno de los resultados del comando find. Veamos un ejemplo, existe el comando <code>md5</code> que nos muestra el checksum de un archivo:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ find . -name <span class="string">"package.json"</span> -exec md5 &#123;&#125; \;</div></pre></td></tr></table></figure>
+<p><code>{}</code> Es el nombre del archivo resultado del find<br><code>\:</code> o <code>\+</code> Acaba con el comando exec</p>
+<img src="/blog/2016/09/01/busquedas-usando-find/md5.png" alt="checksums" title="checksums">
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#info sobre imágenes como la resolución</span></div><div class="line">$ find ../Projects/AprendeLoBásico/covers/img/JS -exec file &#123;&#125; \;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Adjuntar los archivos resultantes en uno solo</span></div><div class="line">$ find -name <span class="string">'gulpfile.js'</span> -exec cat &#123;&#125; \; &gt; gulps.js</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Cambiar permisos de varios archivos a la vez</span></div><div class="line">$ find . -type f -perm 644 -exec chmod 664 &#123;&#125; \;</div></pre></td></tr></table></figure>
+<p>Apenas he explorado una parte del comando <strong>find</strong> y podría continuar indeterminadamente haciendo combinaciones, los invito a hacer las suyas y encontrar como les es útil este versátil comando.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://elyager.github.io/blog/blog/2016/09/01/busquedas-usando-find/" data-id="cislejpnp000t6o9kf2jvs942" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/terminal-bash-zsh/">terminal bash zsh</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2016/08/26/crontab/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Crontab, cómo programar tareas</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module">
+  <div class="github-widget" data-username="elyager"></div> <script src="https://npmcdn.com/github-card@1.2.1/dist/widget.js"></script> <p>You can find me also at twitter <a href="http:www.twitter.com/elyager" >@elyager</a></p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/shell-tasks/">shell tasks</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/terminal-bash-zsh/">terminal bash zsh</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a> <a href="/blog/tags/Shell-Terminal-Bash-ZSH/" style="font-size: 10px;">Shell Terminal Bash ZSH</a> <a href="/blog/tags/shell-tasks/" style="font-size: 10px;">shell tasks</a> <a href="/blog/tags/terminal-bash-zsh/" style="font-size: 10px;">terminal bash zsh</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/09/">septiembre 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/blog/2016/09/01/busquedas-usando-find/">Búsquedas usando find</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/26/crontab/">Crontab, cómo programar tareas</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/24/klipse/">Klipse Javascript Live Coding</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/23/permisos-chmod/">Permisos, el uso de chown y chmod</a>
+        </li>
+      
+        <li>
+          <a href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Erik Ochoa<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+  <!-- Klipse for JS evaluation live coding  -->
+  <link rel="stylesheet" href="http://app.klipse.tech/css/codemirror.css">
+  <link rel="stylesheet" href="/blog/css/material-theme.css">
+
+  <script>
+      window.klipse_settings = {
+          selector_eval_js: '.language-klipse-eval-js',
+          codemirror_options_in: {
+            lineNumbers: true,
+            autoCloseBrackets: true
+          }
+      };
+  </script>
+  <script src="http://app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"></script>
+</body>
+</html>
