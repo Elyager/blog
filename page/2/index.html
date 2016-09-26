@@ -78,227 +78,6 @@
         <div class="col-sm-8 blog-main">
           
   
-    <article id="draf-rm-rf" class="article article-type-draf" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/20/rm-rf/">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/blog/2016/08/20/rm-rf/" class="article-date"><time datetime="2016-08-21T00:03:27.000Z" itemprop="datePublished">2016-08-20</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando <code>rm</code> no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás seguro de borrar. Razón número uno por la que no recomiendo usar la terminal con usuario root todo el tiempo a menos que realmente necesites los permisos de root, vamos, ingresar la contraseña una que otra vez no te va a matar o si? veamos el comando rm entonces:</p>
-        
-          <p class="article-more-link">
-            <a class="btn btn-primary" href="/blog/2016/08/20/rm-rf/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/rm-rf/" data-id="citkc9b73001e0w9kbmmgfuvo" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-symlinks" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/20/symlinks/">Links Simbólicos (shortcuts)</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/blog/2016/08/20/symlinks/" class="article-date"><time datetime="2016-08-20T08:25:05.000Z" itemprop="datePublished">2016-08-20</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>symlinks</strong> o “links simbólicos” es lo que conocemos en windows como shortcuts sólo que para ambientes basados en *nix como Mac y Linux.</p>
-<p>Existen dos tipos de symlinks <strong>soft</strong> y <strong>hard</strong>, veamos el siguiente diagrama para ilustrar las diferencias:</p>
-<img src="/blog/2016/08/20/symlinks/soft_and_hard.png" alt="Diferencias entre hard link y soft link" title="Diferencias entre hard link y soft link">
-        
-          <p class="article-more-link">
-            <a class="btn btn-primary" href="/blog/2016/08/20/symlinks/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/symlinks/" data-id="citkc9b75001g0w9kr1hvnoa8" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-linea-de-comandos" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/18/linea-de-comandos/">La Terminal (Shell)</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/blog/2016/08/18/linea-de-comandos/" class="article-date"><time datetime="2016-08-18T23:54:37.000Z" itemprop="datePublished">2016-08-18</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Shell-Terminal-Linea-de-comandos"><a href="#Shell-Terminal-Linea-de-comandos" class="headerlink" title="Shell, Terminal, Linea de comandos?"></a>Shell, Terminal, Linea de comandos?</h3><p>La terminal es una aplicación que viene pre-instalada en los sistemas basados en unix que siguen el estándar <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> y nos brinda un ambiente de entradas/salidas que “contiene” o comunica al shell los comandos que escribimos en ella para que sean interpretados y nos muestre el resultado de salida en pantalla.</p>
-<p>Existen diferentes shells disponibles que podemos instalar entre los más usados están <strong>bash</strong> y <strong>zsh</strong>, yo voy a utilizar zsh. Para fines prácticos nos vamos a referir a la terminal de ahora en adelante.</p>
-<blockquote>
-<p>Nota: windows cuenta con cmd (linea de comandos) y powershell que cumplen propósitos similares pero siguen arquitecturas diferentes al shell de unix. Por eso debemos instalar un shell compatible con ayuda de <a href="https://www.cygwin.com/">Cygwin</a> o en el caso de Windows 10 ya pueden activar bash como un feature del sistema.</p>
-</blockquote>
-<img src="/blog/2016/08/18/linea-de-comandos/terminal.png" alt="La Terminal" title="La Terminal">
-        
-          <p class="article-more-link">
-            <a class="btn btn-primary" href="/blog/2016/08/18/linea-de-comandos/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/18/linea-de-comandos/" data-id="citkc9b6z001b0w9kui7ezt7z" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-array-functions-splice" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/05/23/array-functions-splice/">Array Functions - Splice</a>
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/blog/2016/05/23/array-functions-splice/" class="article-date"><time datetime="2016-05-23T19:16:35.000Z" itemprop="datePublished">2016-05-23</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>La función array.splice sirve para “empalmar” o “insertar” un valor en cierta posición del<br>arreglo ya sea sobrescribiendolo o desplazándolo. Veamos un ejemplo (comentarios en el código):</p>
-        
-          <p class="article-more-link">
-            <a class="btn btn-primary" href="/blog/2016/05/23/array-functions-splice/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/05/23/array-functions-splice/" data-id="citkc9b6o00130w9kmunkoxj0" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Arrays/">Arrays</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Functions/">Functions</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-array-functions-slice" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -337,7 +116,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/05/06/array-functions-slice/" data-id="citkc9b6n00120w9kb1xm767o" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/05/06/array-functions-slice/" data-id="citkcsm6m000y3w9kpzft8h2p" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -376,7 +155,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/lotd/">lotd</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/shell-tasks/">shell tasks</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/terminal-bash-zsh/">terminal bash zsh</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Arrays/">Arrays</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Functions/">Functions</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Bash-ZSH-Terminal/">Shell Bash ZSH Terminal</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/lotd/">lotd</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/shell-tasks/">shell tasks</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/tags/terminal-bash-zsh/">terminal bash zsh</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -385,7 +164,7 @@
   <div class="sidebar-module">
     <h4>Tag Cloud</h4>
     <p class="tagcloud">
-      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a> <a href="/blog/tags/Shell-Terminal-Bash-ZSH/" style="font-size: 10px;">Shell Terminal Bash ZSH</a> <a href="/blog/tags/lotd/" style="font-size: 10px;">lotd</a> <a href="/blog/tags/shell-tasks/" style="font-size: 10px;">shell tasks</a> <a href="/blog/tags/terminal-bash-zsh/" style="font-size: 10px;">terminal bash zsh</a>
+      <a href="/blog/tags/Arrays/" style="font-size: 20px;">Arrays</a> <a href="/blog/tags/Functions/" style="font-size: 20px;">Functions</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/Shell-Bash-ZSH-Terminal/" style="font-size: 10px;">Shell Bash ZSH Terminal</a> <a href="/blog/tags/Shell-Terminal-Bash-ZSH/" style="font-size: 10px;">Shell Terminal Bash ZSH</a> <a href="/blog/tags/lotd/" style="font-size: 20px;">lotd</a> <a href="/blog/tags/shell-tasks/" style="font-size: 10px;">shell tasks</a> <a href="/blog/tags/terminal-bash-zsh/" style="font-size: 10px;">terminal bash zsh</a>
     </p>
   </div>
 
@@ -393,7 +172,7 @@
   
   <div class="sidebar-module">
     <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/09/">septiembre 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/09/">septiembre 2016</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/08/">agosto 2016</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/blog/archives/2016/05/">mayo 2016</a><span class="sidebar-module-list-count">2</span></li></ul>
   </div>
 
 
@@ -404,23 +183,23 @@
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/blog/2016/09/26/LOTD-20160926-1/">LOTD-20160926</a>
+          <a href="/blog/2016/09/26/LOTD-20160926/">LOTD-20160926</a>
         </li>
       
         <li>
-          <a href="/blog/2016/09/26/LOTD-20160926/">(no title)</a>
+          <a href="/blog/2016/09/23/LOTD-20160923/">LOTD-20160923</a>
         </li>
       
         <li>
-          <a href="/blog/2016/09/25/LOTD-20160925/">(no title)</a>
+          <a href="/blog/2016/09/01/busquedas-usando-find/">Búsquedas usando find</a>
         </li>
       
         <li>
-          <a href="/blog/2016/09/25/LOTD-20160925-1/">LOTD-20160925</a>
+          <a href="/blog/2016/08/26/crontab/">Crontab, cómo programar tareas</a>
         </li>
       
         <li>
-          <a href="/blog/2016/09/24/LOTD-20160924/">(no title)</a>
+          <a href="/blog/2016/08/24/klipse/">Klipse Javascript Live Coding</a>
         </li>
       
     </ul>
