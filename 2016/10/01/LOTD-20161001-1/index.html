@@ -3,23 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Links Simbólicos (shortcuts) | BlogDelYager</title>
+  <title>LOTD-20161001 | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="symlinks o “links simbólicos” es lo que conocemos en windows como shortcuts sólo que para ambientes basados en *nix como Mac y Linux.
-Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Links Simbólicos (shortcuts)">
-<meta property="og:url" content="http://elyager.github.io/blog/2016/08/20/symlinks/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="LOTD-20161001">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/10/01/LOTD-20161001-1/index.html">
 <meta property="og:site_name" content="BlogDelYager">
-<meta property="og:description" content="symlinks o “links simbólicos” es lo que conocemos en windows como shortcuts sólo que para ambientes basados en *nix como Mac y Linux.
-Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
-<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/08/20/symlinks/soft_and_hard.png">
-<meta property="og:updated_time" content="2016-08-20T15:09:03.000Z">
+<meta property="og:updated_time" content="2016-10-02T04:15:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Links Simbólicos (shortcuts)">
-<meta name="twitter:description" content="symlinks o “links simbólicos” es lo que conocemos en windows como shortcuts sólo que para ambientes basados en *nix como Mac y Linux.
-Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
-<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/08/20/symlinks/soft_and_hard.png">
+<meta name="twitter:title" content="LOTD-20161001">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -85,13 +77,13 @@ Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-symlinks" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-LOTD-20161001-1" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Links Simbólicos (shortcuts)
+      LOTD-20161001
     </h1>
   
 
@@ -100,7 +92,7 @@ Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2016/08/20/symlinks/" class="article-date"><time datetime="2016-08-20T08:25:05.000Z" itemprop="datePublished">2016-08-20</time></a>
+  <a href="/blog/2016/10/01/LOTD-20161001-1/" class="article-date"><time datetime="2016-10-02T04:15:10.000Z" itemprop="datePublished">2016-10-01</time></a>
 </div>
 
     
@@ -111,25 +103,7 @@ Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>symlinks</strong> o “links simbólicos” es lo que conocemos en windows como shortcuts sólo que para ambientes basados en *nix como Mac y Linux.</p>
-<p>Existen dos tipos de symlinks <strong>soft</strong> y <strong>hard</strong>, veamos el siguiente diagrama para ilustrar las diferencias:</p>
-<img src="/blog/2016/08/20/symlinks/soft_and_hard.png" alt="Diferencias entre hard link y soft link" title="Diferencias entre hard link y soft link">
-<a id="more"></a>
-<p>Tal como se ve en el “diagrama”, un hard link hace referencia a la dirección en memoria donde se encuentra el archivo, mientras que el soft link hace referencia al nombre del archivo el cual eventualmente lleva a la dirección en memoria. Lo importante a concluir de esto es que si cambiamos el nombre del archivo original, cualquier soft link que haga referencia a él dejaría de funcionar mientras que los hard links continuarían cómo si nada porque apuntan directo a memoria.</p>
-<p>Un hard link es básicamente asignar un segundo filename a un contenido existente, el contenido del archivo sólo existe una vez en disco duro.</p>
-<p><strong>NOTA:</strong> Los hard links tienen la restricción de que sólo pueden ser usados en la misma unidad de almacenamiento, por ejemplo no puedes hacer un hard link en la ruta de un HD externo hacía un archivo del HD interno del computador.</p>
-<p><code>$ ln originalFile.txt hard-link</code> por default el comando <code>ln</code> crea un <strong>hard link</strong></p>
-<p><code>$ ln -s originalFile.txt soft-link</code> con la bandera <code>-s</code> creamos un <strong>soft link</strong></p>
-<p>Si listas los archivos del directorio <em>/usr/local/bin/</em> podrás ver un montón de soft links, se identifican fácilmente por la <strong>l</strong> al principio de la columna de permisos, algo así <code>lrwxr-xr-x</code></p>
-<p><code>$ ls -l /usr/local/bin</code></p>
-<p>Es muy común crear soft links para ejecutables que queremos estén disponibles para todo el sistema a través de la variable de entorno $PATH.</p>
-<p>Para esto hay que ir al directorio <code>$ cd /usr/local/bin</code> y luego ejecutar algo como:</p>
-<p><code>$ ln -s /Users/elyager/Documents/miExecutableFile</code></p>
-<p>Aquí no proporcionamos el nombre del link y toma por default el nombre del archivo original, sería el equivalente a tener</p>
-<p><code>$ ln -s /Users/elyager/Documents/myExecutableFile myExecutableFile</code></p>
-<p>y así si escribimos en la consola myExecutableFile debería encontrarlo sin problemas.</p>
-<p>Eso es lo indispensable que hay que saber sobre los symlinks, have fun!</p>
-
+        
       
     </div>
 
@@ -139,13 +113,11 @@ Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/symlinks/" data-id="cits4d5e1001kd99k72uohezs" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/10/01/LOTD-20161001-1/" data-id="cits4d5di0011d99kspai6dek" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Shell-Terminal-Bash-ZSH/">Shell Terminal Bash ZSH</a></li></ul>
-
 
     </footer>
   </div>
@@ -154,19 +126,12 @@ Existen dos tipos de symlinks soft y hard, veamos el siguiente dia">
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/blog/2016/08/18/linea-de-comandos/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/10/01/LOTD-20161001/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">La Terminal (Shell)</span>
+      <span class="article-nav-link-title">(no title)</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/blog/2016/08/20/rm-rf/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
