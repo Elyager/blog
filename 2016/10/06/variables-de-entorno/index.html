@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Javascript | BlogDelYager</title>
+  <title>El $PATH | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BlogDelYager">
-<meta property="og:url" content="http://elyager.github.io/blog/tags/Javascript/index.html">
+  <meta name="description" content="Vamos a hablar rápidamente de la variable de entorno PATH, me voy a enfocar en un entrono macOS pero es muy similar o casi que igual en Linux. Windows ni hablamos… ya saben cómo es esto.
+Para consulta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="El $PATH">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/10/06/variables-de-entorno/index.html">
 <meta property="og:site_name" content="BlogDelYager">
+<meta property="og:description" content="Vamos a hablar rápidamente de la variable de entorno PATH, me voy a enfocar en un entrono macOS pero es muy similar o casi que igual en Linux. Windows ni hablamos… ya saben cómo es esto.
+Para consulta">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/10/06/variables-de-entorno/echo_path.gif">
+<meta property="og:image" content="http://elyager.github.io/blog/blog/2016/10/06/variables-de-entorno/etc_paths.png">
+<meta property="og:updated_time" content="2016-10-07T04:39:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BlogDelYager">
+<meta name="twitter:title" content="El $PATH">
+<meta name="twitter:description" content="Vamos a hablar rápidamente de la variable de entorno PATH, me voy a enfocar en un entrono macOS pero es muy similar o casi que igual en Linux. Windows ni hablamos… ya saben cómo es esto.
+Para consulta">
+<meta name="twitter:image" content="http://elyager.github.io/blog/blog/2016/10/06/variables-de-entorno/echo_path.gif">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -76,40 +86,90 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+          <article id="post-variables-de-entorno" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2016/08/24/klipse/">Klipse Javascript Live Coding</a>
+    <h1 class="article-title" itemprop="name">
+      El $PATH
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2016/08/24/klipse/" class="archive-article-date"><time datetime="2016-08-24T19:07:10.000Z" itemprop="datePublished">agosto 24º</time></a>
+  <a href="/blog/2016/10/06/variables-de-entorno/" class="article-date"><time datetime="2016-10-07T04:39:16.000Z" itemprop="datePublished">2016-10-06</time></a>
 </div>
 
-  </header>
-</article>
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vamos a hablar rápidamente de la variable de entorno <strong>PATH</strong>, me voy a enfocar en un entrono macOS pero es muy similar o casi que igual en Linux. Windows ni hablamos… ya saben cómo es esto.</p>
+<p>Para consultar el contenido de la variable PATH hacemos lo siguiente:<br><img src="/blog/2016/10/06/variables-de-entorno/echo_path.gif" alt="echo $PATH" title="echo $PATH"></p>
+<a id="more"></a>
+<p>La variable de entrono PATH almacena todos los “paths” o rutas donde se van a buscar archivos ejecutables al momento de que se hace el llamado desde la terminal.</p>
+<p>Es decir cuando escribimos un comando y presionamos enter⮐, lo que hace el sistema es ir a buscar a cada una de las rutas un ejecutable con el nombre que le hemos indicado.</p>
+<p>Ahora, cómo agregamos una ruta a esta variable? hay tres formas:</p>
+<h3 id="1-Temporalmente-mientras-dure-la-sesion-abierta"><a href="#1-Temporalmente-mientras-dure-la-sesion-abierta" class="headerlink" title="1. Temporalmente mientras dure la sesión abierta"></a>1. Temporalmente mientras dure la sesión abierta</h3><p><code>$ export PATH=$PATH:/mi/nueva/ruta/</code></p>
+<p>Aquí estamos diciendo asigna a la variable PATH el valor actual de PATH es decir todas las rutas que ya había más la ruta que estamos definiendo al final. El problema con esta forma es que cuando cerremos la terminal esto se pierde y hay que volver a escribir el comando.</p>
+<h3 id="2-Permanente-para-el-usuario-actual"><a href="#2-Permanente-para-el-usuario-actual" class="headerlink" title="2. Permanente para el usuario actual"></a>2. Permanente para el usuario actual</h3><p>Aquí depende de que shell utilices, si no sabes que es un shell lo más probable es que uses bash por lo tanto tendrías que modificar el archivo de configuración llamado <strong>~/.bash_profile</strong>. En mi caso que uso zsh es <strong>~/.zshrc</strong> y en caso de que sea otro hay que buscar su archivo de configuración normalmente ubicado en la ruta home <code>~/</code>.</p>
+<p>Para editar el archivo se puede usar vim:</p>
+<p><code>$ vim ~/.bash_profile</code></p>
+<p>Si no son de editores de consola pueden usar sublime o atom:</p>
+<p><code>$ subl ~/.bash_profile</code><br><code>$ atom ~/.bash_profile</code></p>
+<p>Háganlo con el editor que tengan, el punto es editar el archivo de configuración de nuestro shell.</p>
+<p>Una vez que estemos en el archivo vamos a agregar al final <strong><em>PATH=$PATH:/mi/nueva/ruta/</em></strong></p>
+<p><strong>NOTA:</strong> Si lo buscan en el finder tomen en cuenta que es un archivo oculto.</p>
+<p>Este archivo es ejecutado para el usuario cada vez que se abre una terminal por lo que siempre tendremos nuestra variable PATH con los valores deseados.</p>
+<h3 id="3-Permanente-para-todos-los-usuarios"><a href="#3-Permanente-para-todos-los-usuarios" class="headerlink" title="3. Permanente para todos los usuarios"></a>3. Permanente para todos los usuarios</h3><p>En este caso hay que modificar el archivo que se encuentra en <strong>/etc/paths</strong> y agregar al final de la lista las rutas o ruta que queramos incluir.</p>
+<img src="/blog/2016/10/06/variables-de-entorno/etc_paths.png" alt="/etc/paths" title="/etc/paths">
+<p>Esta forma requiere permisos de sueperusuario para editar el archivo paths.</p>
+<p>Y así es como modificamos nuestra variable de entorno PATH para que nuestros ejecutables estén disponibles de forma global 😎.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://elyager.github.io/blog/blog/2016/10/06/variables-de-entorno/" data-id="citzbfagy001van9kcup3rm4e" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/bash/">bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/shell/">shell</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/blog/2016/10/06/LOTD-20161006/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">LOTD-20161006</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
 
   
-  
-    </div></section>
-  
+</article>
 
 
 
