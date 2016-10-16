@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot; | BlogDelYager</title>
+  <title>LOTD-20161015 | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
+  <meta name="description" content="Samsung’s Galaxy Note 7 makes the no-fly list LINK
+
+Última actualización: 20:50:04">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reemplaza el temido comando  "rm" por "trash"">
-<meta property="og:url" content="http://elyager.github.io/blog/2016/08/20/rm-rf/index.html">
+<meta property="og:title" content="LOTD-20161015">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/10/15/LOTD-20161015/index.html">
 <meta property="og:site_name" content="BlogDelYager">
-<meta property="og:description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
-<meta property="og:updated_time" content="2016-08-23T08:12:18.000Z">
+<meta property="og:description" content="Samsung’s Galaxy Note 7 makes the no-fly list LINK
+
+Última actualización: 20:50:04">
+<meta property="og:updated_time" content="2016-10-16T03:50:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reemplaza el temido comando  "rm" por "trash"">
-<meta name="twitter:description" content="Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando rm no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás segur">
+<meta name="twitter:title" content="LOTD-20161015">
+<meta name="twitter:description" content="Samsung’s Galaxy Note 7 makes the no-fly list LINK
+
+Última actualización: 20:50:04">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -80,13 +86,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="draf-rm-rf" class="article article-type-draf" itemscope itemprop="blogPost">
+          <article id="post-LOTD-20161015" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Reemplaza el temido comando  &quot;rm&quot; por &quot;trash&quot;
+      LOTD-20161015
     </h1>
   
 
@@ -95,7 +101,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2016/08/20/rm-rf/" class="article-date"><time datetime="2016-08-21T00:03:27.000Z" itemprop="datePublished">2016-08-20</time></a>
+  <a href="/blog/2016/10/15/LOTD-20161015/" class="article-date"><time datetime="2016-10-16T03:40:06.000Z" itemprop="datePublished">2016-10-15</time></a>
 </div>
 
     
@@ -106,24 +112,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Borrar directorios a través de la terminal es un tema especial, debemos tomar en cuenta que el comando <code>rm</code> no es muy “user friendly” que digamos y no se anda con sutilezas como preguntar si estás seguro de borrar. Razón número uno por la que no recomiendo usar la terminal con usuario root todo el tiempo a menos que realmente necesites los permisos de root, vamos, ingresar la contraseña una que otra vez no te va a matar o si? veamos el comando rm entonces:</p>
-<a id="more"></a>
-<p><code>$ rm miArchivo.txt</code> Borra el archivo</p>
-<p><code>$ rm -r miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios</p>
-<p><code>$ rm -rf miFolder</code> Borra todo el contenido del directorio incluyendo subdirectorios, forzándolo incluso si no se tienen los permisos.</p>
-<p>Imaginemos que en el último comando donde lo hacernos de forma <strong>recursiva</strong> y <strong>forzada</strong> en lugar de borrar <code>miFolder</code> borramos <code>/</code> en ese caso estaríamos borrando el sistema por completo.</p>
-<p><strong>🚫🚫🚫NUNCA ESCRIBAS ESTO🚫🚫🚫</strong><br><code>$ rm -rf /</code> borrar de forma recursiva y forzada desde el directorio raíz en adelante, es decir todo el sistema</p>
-<p>Si este comando es tan peligroso y nosotros como humanos somos propensos a cometer errores, ¿qué podemos hacer?</p>
-<p>Hay personas que recomiendan dar un alias al comando <code>rm</code> por <code>rm -i</code> para que siempre nos pregunte cuando queramos borrar, esto es una buena opción pero igual podríamos darle que si a todo y borrar algo importante.</p>
-<p>Por eso me voy más por la opción de utilizar otro comando para “borrar”, ese comando es <a href="http://hasseg.org/trash/" target="_blank" rel="external">Trash</a>. Trash es un script que se puede instalar con homebrew así:</p>
-<p><code>$ brew install trash</code></p>
-<p>En realidad no es un comando para borrar si no para mandar a la papelera de reciclaje. Esto lo hace a través del Finder (incluso se escucha el sonido de cuando enviamos a la papelera) para que así podamos usar la opción de <strong>Put Back</strong> en caso que queramos un archivo de vuelta justo donde estaba.</p>
-<p><code>$ trash miArchivo.txt</code> Bora el archivo</p>
-<p><code>$ trash miFolder</code> No es necesario especificar ninguna bandera para borrar un directorio</p>
-<p><code>$ trash -l</code> Lista el contenido de la papelera</p>
-<p><code>$ trash -e</code> Borra la papelera (pregunta por confirmación)</p>
-<p>Así tenemos dos comandos totalmente diferentes, uno para eliminar y otro para mandar a la papelera.</p>
-<p>Usen este último y se van a ahorrar muchos problemas, en serio <code>rm</code> está prohibido. ☠️</p>
+        <ul>
+<li>Samsung’s Galaxy Note 7 makes the no-fly list <a href="http://arstechnica.com/gadgets/2016/10/samsungs-galaxy-note-7-may-soon-make-the-no-fly-list/" target="_blank" rel="external">LINK</a></li>
+</ul>
+<p>Última actualización: <strong>20:50:04</strong></p>
 
       
     </div>
@@ -134,11 +126,13 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/20/rm-rf/" data-id="ciuc3g72a002b349k3j712aux" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/10/15/LOTD-20161015/" data-id="ciuc3g71n001n349k5otz6jz4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/lotd/">lotd</a></li></ul>
+
 
     </footer>
   </div>
@@ -147,19 +141,12 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/blog/2016/08/20/symlinks/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/10/14/LOTD-20161014/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Links Simbólicos (shortcuts)</span>
+      <span class="article-nav-link-title">LOTD-20161014</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/blog/2016/08/23/permisos-chmod/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Permisos, el uso de chown y chmod</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
