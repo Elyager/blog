@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Klipse Javascript Live Coding | BlogDelYager</title>
+  <title>LOTD-20161113 | BlogDelYager</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Anteriormente he utilizado codepen.io para ejemplificar código Javascript pero tiene la desventaja de ser muy pesado y de no permitir el “live coding” dentro de la misma página donde está incrustado.">
+  <meta name="description" content="Última actualización: 13:00:03">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Klipse Javascript Live Coding">
-<meta property="og:url" content="http://elyager.github.io/blog/2016/08/24/klipse/index.html">
+<meta property="og:title" content="LOTD-20161113">
+<meta property="og:url" content="http://elyager.github.io/blog/2016/11/13/LOTD-20161113/index.html">
 <meta property="og:site_name" content="BlogDelYager">
-<meta property="og:description" content="Anteriormente he utilizado codepen.io para ejemplificar código Javascript pero tiene la desventaja de ser muy pesado y de no permitir el “live coding” dentro de la misma página donde está incrustado.">
-<meta property="og:updated_time" content="2016-08-24T19:07:10.000Z">
+<meta property="og:description" content="Última actualización: 13:00:03">
+<meta property="og:updated_time" content="2016-11-13T20:00:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Klipse Javascript Live Coding">
-<meta name="twitter:description" content="Anteriormente he utilizado codepen.io para ejemplificar código Javascript pero tiene la desventaja de ser muy pesado y de no permitir el “live coding” dentro de la misma página donde está incrustado.">
+<meta name="twitter:title" content="LOTD-20161113">
+<meta name="twitter:description" content="Última actualización: 13:00:03">
 <meta name="twitter:creator" content="@elyager">
   
     <link rel="alternate" href="/atom.xml" title="BlogDelYager" type="application/atom+xml">
@@ -80,13 +80,13 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-klipse" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-LOTD-20161113" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h1 class="article-title" itemprop="name">
-      Klipse Javascript Live Coding
+      LOTD-20161113
     </h1>
   
 
@@ -95,7 +95,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/blog/2016/08/24/klipse/" class="article-date"><time datetime="2016-08-24T19:07:10.000Z" itemprop="datePublished">2016-08-24</time></a>
+  <a href="/blog/2016/11/13/LOTD-20161113/" class="article-date"><time datetime="2016-11-13T17:05:06.000Z" itemprop="datePublished">2016-11-13</time></a>
 </div>
 
     
@@ -106,40 +106,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Anteriormente he utilizado <a href="http://codepen.io" target="_blank" rel="external">codepen.io</a> para ejemplificar código <strong>Javascript</strong> pero tiene la desventaja de ser muy pesado y de no permitir el “live coding” dentro de la misma página donde está incrustado. </p>
-<p>Es por eso que buscando alternativas para ejemplificar sólo código Javascript me tope con <a href="https://github.com/viebel/klipse" target="_blank" rel="external">Klipse</a> un “evaluador de código” que es muy fácil de implementar, ligero y permite el live coding.</p>
-<p>El siguiente código tiene un error, solucionalo agregando la variable <strong>yourName</strong>.  Algo así:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> yourName = <span class="string">'tu nombre'</span></div></pre></td></tr></table></figure>
-<pre><code class="language-klipse-eval-js">
-
-  function sayHi(name){
-    return 'what do you think ' + name + '? nice, right?';  
-  }
-
-  sayHi(yourName);
-
-</code></pre>
-
-<p>Veamos como implementarlo en tu sitio…</p>
-<a id="more"></a>
-<p><strong>Nota:</strong> Klipse soporta otros lenguajes como ruby y php.</p>
-<p>Lo puedes implementar en cualquier página agregando lo siguiente al final del body.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"http://app.klipse.tech/css/codemirror.css"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">window</span>.klipse_settings = &#123;</div><div class="line">      selector_eval_js: <span class="string">'.language-klipse-eval-js'</span>, <span class="comment">// css selector for the html elements you want to klipsify</span></div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://app.klipse.tech/plugin_prod/js/klipse_plugin.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Para el editor utiliza <a href="https://codemirror.net/" target="_blank" rel="external">CodeMirror</a> el cual se puede personalizar bastante, yo sólo le agregue números de linea y auto cierre de corchetes, paréntesis etc.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">window</span>.klipse_settings = &#123;</div><div class="line">    selector_eval_js: <span class="string">'.language-klipse-eval-js'</span>,</div><div class="line">    codemirror_options_in: &#123;</div><div class="line">      lineNumbers: <span class="literal">true</span>,</div><div class="line">      autoCloseBrackets: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Después sólo hace falta que le asignes la clase <code>.language-klipse-eval-js</code> al elemento html que contiene el código.</p>
-<p>Yo personalmente he utilizado los elementos <code>&lt;pre&gt;&lt;code&gt;CODIGO JAVASCRIPT&lt;/code&gt;&lt;prev&gt;</code>, <code>&lt;pre&gt;</code> porque este blog usa markdown para generar el html y tenía problemas con las comillas y <code>&lt;code&gt;</code> simplemente por semántica, bien podría ser un <code>&lt;div&gt;</code>.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">"language-klipse-eval-js"</span>&gt;</span></div><div class="line">  //multiply function</div><div class="line">  function multiply(a, b) &#123;</div><div class="line">    return a * b;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  multiply(20, 234)</div><div class="line"><span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></div></pre></td></tr></table></figure>
-<pre><code class="language-klipse-eval-js">
-  //multiply function
-  function multiply(a, b) {
-    return a * b;
-  }
-
-  multiply(20, 234)
-</code></pre>
-
-<p>Y así tenemos un editor de Javascript que evaluá el código en nuestro sitio.</p>
+        <p>Última actualización: <strong>13:00:03</strong></p>
 
       
     </div>
@@ -150,12 +117,12 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://elyager.github.io/blog/blog/2016/08/24/klipse/" data-id="civh2fi35002vfr9k7f84rwvz" class="article-share-link">
+      <a data-url="http://elyager.github.io/blog/blog/2016/11/13/LOTD-20161113/" data-id="civh2fi2w002jfr9kz30ixb0t" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Javascript/">Javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/lotd/">lotd</a></li></ul>
 
 
     </footer>
@@ -165,19 +132,12 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/blog/2016/08/23/permisos-chmod/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/11/11/LOTD-20161111/" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Permisos, el uso de chown y chmod</span>
+      <span class="article-nav-link-title">LOTD-20161111</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/blog/2016/08/26/crontab/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Crontab, cómo programar tareas</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
